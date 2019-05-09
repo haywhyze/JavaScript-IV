@@ -8,7 +8,7 @@ class Person {
   }
 
   speak() {
-    return `Hello my name is ${this.name}, I am from ${this.location}`;
+    console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
   }
 }
 
@@ -21,10 +21,31 @@ class Instructor extends Person {
   }
 
   demo(subject) {
-    return `Today we are learning about ${subject}`
+    console.log(`Today we are learning about ${subject}`);
   }
 
   grade(student, subject) {
-    return `${student.name} receives a perfect score on ${subject}`
+    console.log(`${student.name} receives a perfect score on ${subject}`);
+  }
+}
+
+class Student extends Person {
+  constructor(name, age, location, gender, previousBackground, className, favSubjects) {
+    super(name, age, location, gender);
+    this.previousBackground = previousBackground;
+    this.className = className;
+    this.favSubjects = favSubjects;
+  }
+
+  listsSubjects() {
+    this.favSubjects.forEach(subject => console.log(subject));
+  }
+
+  PRAssignment(subject) {
+    console.log(`${student.name} has submitted a PR for ${subject}`)
+  }
+
+  sprintChallenge(subject) {
+    console.log(`${student.name} has begun sprint challenge on ${subject}`)
   }
 }
