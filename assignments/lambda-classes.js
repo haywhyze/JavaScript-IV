@@ -42,11 +42,11 @@ class Student extends Person {
   }
 
   PRAssignment(subject) {
-    console.log(`${student.name} has submitted a PR for ${subject}`)
+    console.log(`${this.name} has submitted a PR for ${subject}`)
   }
 
   sprintChallenge(subject) {
-    console.log(`${student.name} has begun sprint challenge on ${subject}`)
+    console.log(`${this.name} has begun sprint challenge on ${subject}`)
   }
 }
 
@@ -58,10 +58,41 @@ class ProjectManagers extends Instructor {
   }
 
   standUp(channel) {
-    console.log(`${name} announces to ${channel}, @channel standy times!​​​​​`);
+    console.log(`${this.name} announces to ${channel}, @channel standy times!​​​​​`);
   }
 
   debugsCode(student, subject) {
     console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
   }
 }
+
+// Instantiate Student Objects
+const martin = new Student('Martin Mensah', 24, 'Accra', 'Male', 'Data Analyst', 'WEBEU2', ['HTML', 'CSS', 'Javascript']);
+const anna = new Student('Anna Winther', 22, 'London', 'Female', 'Graphics Designer', 'WEBEU2', ['React', 'Node', 'Python']);
+const ben = new Student('Benjamin Grabow', 25, 'Berlin', 'Male', 'Neurologist', 'WEBEU2', ['CSS', 'Python', 'Javascript']);
+
+// Instantiate Instructor Objects
+const gabe = new Instructor('Gabriel Cabrejas', 46, 'Yorkshire', 'Male', 'node', 'Javascript', '@channel, let\'s go ');
+
+// Instantiate ProjectManagers Objects
+const tony = new ProjectManagers('Anthony Campbell', 27, 'Amsterdam', 'Male', 'react', 'Javascript', 'Alright @channel, hop in', 'WEBEU1', 'Gabe');
+const delba = new ProjectManagers('Delba de Oliveira', 23, 'London', 'Female', 'django', 'Python', 'Let\'s do peer code reviews', 'WEBEU1', 'Gabe');
+
+// Test Functionalty
+martin.speak();
+anna.speak();
+ben.speak();
+gabe.speak();
+tony.speak();
+delba.speak();
+
+gabe.demo('React');
+gabe.grade(martin, 'Redux');
+gabe.grade(ben, 'Testing');
+
+anna.listsSubjects();
+ben.PRAssignment('User Interface');
+martin.sprintChallenge('Applied Javascript');
+
+tony.standUp('webeu2_anthony');
+delba.debugsCode(ben, 'Express API');
