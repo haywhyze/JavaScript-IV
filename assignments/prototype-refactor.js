@@ -34,15 +34,15 @@ class GameObject {
   * should inherit destroy() from GameObject's prototype
 */
 
-function CharacterStats(createdAt, name, dimensions, healthPoints) {
-  GameObject.call(this, createdAt, name, dimensions);
-  this.healthPoints = healthPoints;
-}
+class CharacterStats extends GameObject {
+  constructor(createdAt, name, dimensions, healthPoints) {
+    super(createdAt, name, dimensions);
+    this.healthPoints = healthPoints;
+  }
 
-CharacterStats.prototype = Object.create(GameObject.prototype);
-
-CharacterStats.prototype.takeDamage = function() {
-  return `${this.name} took damage.`
+  takeDamage() {
+    return `${this.name} took damage.`
+  }
 }
 
 /*
