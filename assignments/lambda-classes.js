@@ -30,9 +30,9 @@ class Instructor extends Person {
 
   updateGrade(student) {
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const updateNumber = getRandomNumber(0 - student.grade, 100 - student.grade);
+    const updateNumber = getRandomNumber(0, 100);
     const oldGrade = student.grade;
-    student.grade = oldGrade - updateNumber;
+    student.grade = updateNumber;
     console.log(`${student.name}'s grade is now ${student.grade} from ${oldGrade}`)
   }
 }
