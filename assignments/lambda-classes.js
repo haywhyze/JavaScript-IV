@@ -27,6 +27,14 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`);
   }
+
+  updateGrade(student) {
+    const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    const updateNumber = getRandomNumber(0 - student.grade, 100 - student.grade);
+    const oldGrade = student.grade;
+    student.grade = oldGrade - updateNumber;
+    console.log(`${student.name}'s grade is now ${student.grade} from ${oldGrade}`)
+  }
 }
 
 class Student extends Person {
@@ -35,6 +43,7 @@ class Student extends Person {
     this.previousBackground = previousBackground;
     this.className = className;
     this.favSubjects = favSubjects;
+    this.grade = 50;
   }
 
   listsSubjects() {
@@ -79,20 +88,23 @@ const tony = new ProjectManagers('Anthony Campbell', 27, 'Amsterdam', 'Male', 'r
 const delba = new ProjectManagers('Delba de Oliveira', 23, 'London', 'Female', 'django', 'Python', 'Let\'s do peer code reviews', 'WEBEU1', 'Gabe');
 
 // Test Functionalty
-martin.speak();
-anna.speak();
-ben.speak();
-gabe.speak();
-tony.speak();
-delba.speak();
+// martin.speak();
+// anna.speak();
+// ben.speak();
+// gabe.speak();
+// tony.speak();
+// delba.speak();
 
-gabe.demo('React');
-gabe.grade(martin, 'Redux');
-gabe.grade(ben, 'Testing');
+// gabe.demo('React');
+// gabe.grade(martin, 'Redux');
+// gabe.grade(ben, 'Testing');
 
-anna.listsSubjects();
-ben.PRAssignment('User Interface');
-martin.sprintChallenge('Applied Javascript');
+// anna.listsSubjects();
+// ben.PRAssignment('User Interface');
+// martin.sprintChallenge('Applied Javascript');
 
-tony.standUp('webeu2_anthony');
-delba.debugsCode(ben, 'Express API');
+// tony.standUp('webeu2_anthony');
+// delba.debugsCode(ben, 'Express API');
+
+// Stretch Goals
+delba.updateGrade(martin);
