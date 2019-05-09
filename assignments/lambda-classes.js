@@ -57,6 +57,10 @@ class Student extends Person {
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`)
   }
+
+  graduate() {
+    this.grade < 70 ? console.log(`${this.name} can not graduate at the moment`) : console.log(`Congratulations ${this.name}. You just graduated from Lambda School`)
+  }
 }
 
 class ProjectManagers extends Instructor {
@@ -88,23 +92,24 @@ const tony = new ProjectManagers('Anthony Campbell', 27, 'Amsterdam', 'Male', 'r
 const delba = new ProjectManagers('Delba de Oliveira', 23, 'London', 'Female', 'django', 'Python', 'Let\'s do peer code reviews', 'WEBEU1', 'Gabe');
 
 // Test Functionalty
-// martin.speak();
-// anna.speak();
-// ben.speak();
-// gabe.speak();
-// tony.speak();
-// delba.speak();
+martin.speak();
+anna.speak();
+ben.speak();
+gabe.speak();
+tony.speak();
+delba.speak();
 
-// gabe.demo('React');
-// gabe.grade(martin, 'Redux');
-// gabe.grade(ben, 'Testing');
+gabe.demo('React');
+gabe.grade(martin, 'Redux');
+gabe.grade(ben, 'Testing');
 
-// anna.listsSubjects();
-// ben.PRAssignment('User Interface');
-// martin.sprintChallenge('Applied Javascript');
+anna.listsSubjects();
+ben.PRAssignment('User Interface');
+martin.sprintChallenge('Applied Javascript');
 
-// tony.standUp('webeu2_anthony');
-// delba.debugsCode(ben, 'Express API');
+tony.standUp('webeu2_anthony');
+delba.debugsCode(ben, 'Express API');
 
 // Stretch Goals
 delba.updateGrade(martin);
+martin.graduate();
